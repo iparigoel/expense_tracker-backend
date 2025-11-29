@@ -4,3 +4,4 @@ package.json
 node_modules/
 expense-details.xlsx
 income-details.xlsx
+uploads/
