@@ -24,8 +24,10 @@ let isConnected = false;
 async function connectToMongoDB(){
   try{
     await mongoose.connect(process.env.MONGO_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+      keepAlive: true,
+      keepAliveInitialDelay: 300000,
     });
     isConnected = true;
     console.log("MongoDB connected successfully");
