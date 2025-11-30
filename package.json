@@ -1,11 +1,11 @@
 {
   "name": "expense-tracker-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "api/server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server.js",
-    "vercel-start": "node server.js"
+    "start": "node api/server",
+    "dev": "nodemon api/server.js",
+    "vercel-start": "node api/server.js"
   },
   "keywords": [],
   "author": "",
