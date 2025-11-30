@@ -35,12 +35,13 @@ async function connectToMongoDB(){
     console.error("MongoDB connection failed:", error);
   }
 }
+connectToMongoDB();
 //add middleware
-app.use((req, res, next) => {
-  if(!isConnected){
-    connectToMongoDB();
-  }next();
-});
+// app.use((req, res, next) => {
+//   if(!isConnected){
+//     connectToMongoDB();
+//   }next();
+// });
 
 // async function connectToMongoDB() {
 //   if (isConnected) return;
@@ -79,7 +80,9 @@ app.use((err, req, res, next) => {
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
 
-module.exports = app;
+module.exports = (req, res) => {
+  app(req, res);
+};
 // module.exports = async (req, res) => {
 //   await connectToMongoDB();
 //   app(req, res);
