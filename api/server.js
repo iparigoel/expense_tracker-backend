@@ -60,6 +60,10 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/income", incomeRoutes);
 app.use("/api/v1/expense", expenseRoutes);
 app.use("/api/v1/dashboard", dashboardRoutes);
+// test route
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend live!" });
+});
 // error handler
 app.use((err, req, res, next) => {
   console.error('Upload error:', err);
